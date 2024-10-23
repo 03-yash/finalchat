@@ -47,7 +47,7 @@ const server = http.createServer(app); // Express server is used to create an HT
 // Initialize Socket.IO on the same server
 const io = new Server(server, {
   cors: {
-    origin: "https://finalchat-eight.vercel.app/", // Allow requests from your frontend
+    origin: "https://finalchat-eight.vercel.app", // Allow requests from your frontend
   },
 });
 
