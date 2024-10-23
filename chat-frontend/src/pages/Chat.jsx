@@ -26,7 +26,7 @@ const Chat = () => {
   // Initialize socket connection
   useEffect(() => {
     if (user && user._id) {
-      socket.current = io("http://localhost:8174");
+      socket.current = io("https://finalchat-backend.vercel.app/");
 
       // Add user to the socket room
       socket.current.emit("new-user-add", user._id);
