@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+input[type="text"]:focus ~ .input-span,
+input[type="text"]:not(:placeholder-shown) ~
+.input-span {
+  @apply transform -translate-y-6 translate-x-0 scale-75;
+}
+
+input[type="email"]:focus ~ .input-span,
+input[type="email"]:not(:placeholder-shown) ~
+.input-span {
+  @apply transform -translate-y-6 translate-x-0 scale-75;
+}
+
+input[type="email"]:focus ~ .input-span,
+input[type="email"]:not(:placeholder-shown) ~
+.input-span {
+  @apply transform -translate-y-6 translate-x-0 scale-75;
+}
+
+input[type="password"]:focus ~ .input-span1,
+input[type="password"]:not(:placeholder-shown) ~
+.input-span1 {
+  @apply transform -translate-y-6 -translate-x-1 scale-75;
+}
+
+.btn1:hover{
+  font-weight: bold;
+  box-shadow: inset 0px 0px 25px rgb(147,51,234);
+  .btnspn{
+    transform: scale(0);
+  }
+}
+
+
+@keyframes fly-1 {
+  0% {
+    transform: translateY(0.1em);
+  }
+  100% {
+    transform: translateY(-0.1em);
+  }
+}
+
+.button:hover .svg-wrapper {
+  animation: fly-1 0.6s ease-in-out infinite alternate;
+  color : rgb(147,51,234);
+}
+
+.button:hover .svg-wrapper svg {
+  transform: translateX(1.2em) rotate(45deg) scale(1.1);
+}
+.button:hover span {
+  
+  transform: translateX(5em);
+}
+
+
+@keyframes animate-msg-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes animate-msg-right {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(100%);
+  }
+}
+
+.animate-msg-left {
+  animation: animate-msg-left 0.5s linear forwards;
+}
+
+.animate-msg-right {
+  animation: animate-msg-right 0.5s linear forwards;
+}
+
+
+.custom-input {
+  background-color: transparent !important;
+}
+
+
+/* Loader */
+@keyframes leap-frog {
+  0%, 100% {
+    transform: translateX(0) rotate(0deg);
+  }
+  33.333% {
+    transform: translateX(40%) rotate(180deg);
+  }
+  66.666% {
+    transform: translateX(80%) rotate(180deg);
+  }
+}
+
+.leap-frog__dot:nth-child(1) {
+  animation: leap-frog 2s ease-in-out infinite;
+}
+
+.leap-frog__dot:nth-child(2) {
+  animation: leap-frog 2s ease-in-out calc(-2s / 3) infinite;
+}
+
+.leap-frog__dot:nth-child(3) {
+  animation: leap-frog 2s ease-in-out calc(-4s / 3) infinite;
+}
