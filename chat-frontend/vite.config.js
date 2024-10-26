@@ -7,10 +7,19 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
+        target: 'https://finalchat-backend.vercel.app/',
+        changeOrigin: true,
+        secure: false,
+      }, '/chat': {
         target: 'http://localhost:8174',
         changeOrigin: true,
         secure: false,
-      }
+      },
+      '/message': {
+        target: 'http://localhost:8174',
+        changeOrigin: true,
+        secure: false,
+      },
     }
   }
 });
