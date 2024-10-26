@@ -94,6 +94,7 @@ export const signupUser = createAsyncThunk(
 
 export const signoutUser = createAsyncThunk("SIGNOUT/LOGOUT", async () => {
   localStorage.removeItem("Chatuser");
+  return null;
 });
 
 export const singinUser = createAsyncThunk(

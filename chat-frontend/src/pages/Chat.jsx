@@ -15,7 +15,7 @@ const Chat = () => {
     (state) => state.user
   );
   const { chat, receiver } = useSelector((state) => state.chat);
-  
+
   // Socket related state
   const [onlineUsers, setOnlineUsers] = useState([]);
   const [sendMsg, setSendMsg] = useState(null);
@@ -65,6 +65,11 @@ const Chat = () => {
 
   // Navigate to login if the user is not authenticated
   useEffect(() => {
+    console.log("Loading:", isLoading);
+    console.log("User:", user);
+    console.log("Is Error:", isError);
+    console.log("Message:", message);
+
     if (!isLoading && (!user || Object.keys(user).length === 0)) {
       navigate("/login");
     }
@@ -75,7 +80,7 @@ const Chat = () => {
   }, [user, isLoading, isError, message, navigate]);
 
   // Logout handler
-  const handlelogout = async () => {
+  const handleLogout = async () => {
     dispatch(signoutUser());
     navigate("/login");
   };
@@ -118,12 +123,11 @@ const Chat = () => {
               </span>
               <button
                 className="text-2xl opacity-70 hover:scale-90 hover:opacity-100"
-                onClick={handlelogout}
+                onClick={handleLogout}
               >
                 <FaUserMinus />
               </button>
             </nav>
-            {/* Pass individual users to checkOnlineStatus */}
             <Listusers users={users} checkOnlineStatus={checkOnlineStatus} />
           </div>
         </div>

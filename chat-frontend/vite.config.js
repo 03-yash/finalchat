@@ -10,16 +10,8 @@ export default defineConfig({
         target: 'http://localhost:8174',
         changeOrigin: true,
         secure: false,
-      }, '/chat': {
-        target: 'http://localhost:8174',
-        changeOrigin: true,
-        secure: false,
-      },
-      '/message': {
-        target: 'http://localhost:8174',
-        changeOrigin: true,
-        secure: false,
-      },
+      }
     }
   }
-})
+});
+
